@@ -1,5 +1,6 @@
 import { type Metadata, type Viewport } from "next"
 import { Analytics } from "@vercel/analytics/react"
+import GoogleAnalytics from "@/components/google-analytics"
 
 import { fontSans } from "@/lib/fonts"
 import { cn } from "@/lib/utils"
@@ -7,6 +8,7 @@ import { TailwindIndicator } from "@/components/tailwind-indicator"
 import { ThemeProvider } from "@/components/theme-provider"
 
 import "@/styles/globals.css"
+import * as process from "process";
 
 export const metadata: Metadata = {
   icons: {
@@ -47,6 +49,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
             <TailwindIndicator />
           </ThemeProvider>
         </body>
+        <GoogleAnalytics />
       </html>
     </>
   )
